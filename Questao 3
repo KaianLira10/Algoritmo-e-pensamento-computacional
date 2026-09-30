@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    float notas[10];
+    float soma = 0, media;
+    int i;
+
+    for (i = 0; i < 10; i++) {
+        printf("Digite a nota do cliente %d (0 a 10): ", i + 1);
+        scanf("%f", &notas[i]);
+
+        if (notas[i] < 0 || notas[i] > 10) {
+            printf("Nota invalida! Digite um valor entre 0 e 10.\n");
+            i--; 
+            continue;
+        }
+
+        soma += notas[i];
+    }
+
+    media = soma / 10.0;
+    printf("\nNota media geral: %.2f\n", media);
+
+    if (media < 7.0) {
+        printf("ALERTA: A media de atendimento esta abaixo de 7!\n");
+    } else {
+        printf("Atendimento dentro do esperado.\n");
+    }
+
+    return 0;
+}
