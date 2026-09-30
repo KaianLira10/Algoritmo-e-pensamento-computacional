@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int opcao;
+    float total = 0;
+
+    do {
+        printf("\nEscolha uma opcao:\n");
+        printf("1 - Adicionar moeda de R$0,50\n");
+        printf("2 - Adicionar moeda de R$1,00\n");
+        printf("3 - Adicionar moeda de R$2,00\n");
+        printf("0 - Encerrar e mostrar total\n");
+        printf("Opcao: ");
+        scanf("%d", &opcao);
+
+        switch(opcao) {
+            case 1:
+                total += 0.50;
+                printf("Adicionado R$0,50. Saldo atual: R$%.2f\n", total);
+                break;
+            case 2:
+                total += 1.00;
+                printf("Adicionado R$1,00. Saldo atual: R$%.2f\n", total);
+                break;
+            case 3:
+                total += 2.00;
+                printf("Adicionado R$2,00. Saldo atual: R$%.2f\n", total);
+                break;
+            case 0:
+                printf("\nEncerrando...\n");
+                break;
+            default:
+                printf("Opcao invalida! Tente novamente.\n");
+        }
+    } while(opcao != 0);
+
+    printf("\nTotal acumulado no cofrinho: R$%.2f\n", total);
+
+    return 0;
+}
