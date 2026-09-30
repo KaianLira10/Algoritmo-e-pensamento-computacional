@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    float consumos[5];
+    float soma = 0;
+    float media;
+    int i;
+    const float limite = 20.0;
+
+    for (i = 0; i < 5; i++) {
+        printf("Digite o consumo de agua do morador %d (em metro cubico): ", i + 1);
+        scanf("%f", &consumos[i]);
+
+        if (consumos[i] <= limite) {
+            printf("Morador %d: consumo dentro da media (%.2f metro cubico).\n", i + 1, consumos[i]);
+        } else {
+            printf("Morador %d: consumo acima da media (%.2f metro cubico).\n", i + 1, consumos[i]);
+        }
+
+        soma += consumos[i];
+    }
+
+    media = soma / 5.0;
+    printf("\nConsumo medio geral: %.2f metro cubico\n", media);
+
+    return 0;
+}
