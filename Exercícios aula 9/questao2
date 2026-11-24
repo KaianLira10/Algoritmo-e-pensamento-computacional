@@ -1,3 +1,16 @@
+Atividade 2: Você está desenvolvendo um sistema de RH. A struct
+Funcionario possui id (int), cargo (char[30]) e salario (float).
+O que o algoritmo deve fazer:
+a) Alocar dinamicamente na memória (usando malloc) o
+registro de um funcionário e preencher seus dados.
+b) Alocar dinamicamente um segundo registro ("Buffer de
+Backup").
+c) Usar a função memcpy() para espelhar instantaneamente os
+dados do funcionário original no buffer de backup.
+d) Salvar o conteúdo do buffer de backup em um arquivo
+binário chamado backup_rh.bin
+---------------------------------------------------------
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
