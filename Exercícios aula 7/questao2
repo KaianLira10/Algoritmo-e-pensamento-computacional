@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int calcularDobro(int n) {
+    return n * 2;
+}
+
+int main() {
+    int numero;
+
+    printf("Digite um numero: ");
+    scanf("%d", &numero);
+
+    printf("Dobro = %d\n", calcularDobro(numero));
+
+    return 0;
+}
