@@ -1,15 +1,14 @@
-Atividade 4: Para otimizar o desempenho do disco, você precisa salvar uma lista inteira
-de professores de uma só vez. A struct Professor possui registro (int) e horas_aula (int).
+Atividade 5: Um sistema eleitoral precisa registrar votos. Crie uma struct Eleitor
+com titulo (char[12]) e zona (int). Crie uma struct Cedula que contenha um Eleitor
+(struct aninhada) e o numero_voto (int).
 O que o algoritmo deve fazer:
-Perguntar ao usuário quantos professores ele deseja cadastrar (N).
-Alocar dinamicamente um array para N professores.
-Criar um segundo bloco de memória (um buffer bruto de bytes com tamanho N *
-sizeof(Professor)).
-Utilizar memcpy() para copiar o array inteiro de structs para dentro desse buffer.
-Gravar o buffer completo no arquivo folha.dat com uma única chamada da função
-fwrite().
-Criar uma função de leitura que use fread() para carregar tudo de volta em um novo
-array dinâmico
+a) Implementar uma função que adicione votos dinamicamente (realoque
+memória usando realloc à medida que novos votos entram).
+b) Salvar a lista completa em um arquivo binário urnas.bin.
+c) Desenvolver uma função de recuperação rápida que abra o arquivo, descubra
+o tamanho total dele (usando fseek e ftell), aloque exatamente o espaço
+necessário na memória de uma só vez, e leia todos os registros do arquivo
+diretamente para o bloco alocado.
 --------------------------------------------------------------------------------
 
 #include <stdio.h>
