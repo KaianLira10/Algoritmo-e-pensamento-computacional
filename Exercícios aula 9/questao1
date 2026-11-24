@@ -1,3 +1,15 @@
+Atividade 1: Crie um algoritmo para gerenciar o estoque
+de uma loja de eletrônicos. Cada item possui codigo (int),
+nome (char[50]) e preco (float).
+O que o algoritmo deve fazer:
+a) Receber os dados de 3 produtos via teclado,
+armazená-los em um vetor de struct.
+b) Salvar esses dados em um arquivo de texto chamado
+estoque.txt (um produto por linha).
+c) Fechar o arquivo, abri-lo novamente para leitura e
+exibir os produtos na tela com um layout organizado.
+------------------------------------------------------
+
 #include <stdio.h>
 #include <stdlib.h>
 
