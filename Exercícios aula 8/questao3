@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include <string.h>
+
+#define TAM 15
+#define MAX 100
+
+int ehPrimo(int n) {
+    int i;
+
+    if (n < 2)
+        return 0;
+
+    for (i = 2; i < n; i++) {
+        if (n % i == 0)
+            return 0;
+    }
+
+    return 1;
+}
+
+int main() {
+    int vetor[TAM];
+    int ocorrencias[TAM];
+    int visitado[TAM] = {0};
+
+    char animais[MAX][50];
+    int qtdAnimais = 0;
+
+    int i, j;
+
+    printf("Digite 15 numeros inteiros:\n");
+
+    for(i = 0; i < TAM; i++) {
+        scanf("%d", &vetor[i]);
+    }
+
+    // Contagem de ocorrências
+    for(i = 0; i < TAM; i++) {
+        ocorrencias[i] = 0;
+
+        for(j = 0; j < TAM; j++) {
+            if(vetor[i] == vetor[j]) {
+                ocorrencias[i]++;
+            }
+        }
+    }
+
+    printf("\n===== ANALISE DOS NUMEROS =====\n");
+
+    for(i = 0; i < TAM; i++) {
+
+        if(visitado[i] == 0) {
+
+            for(j = i + 1; j < TAM; j++) {
+                if(vetor[i] == vetor[j]) {
+                    visitado[j] = 1;
+                }
+            }
+
+            printf("\nNumero: %d", vetor[i]);
+            printf("\nOcorrencias: %d", ocorrencias[i]);
+
+            if(ehPrimo(vetor[i]) && ocorrencias[i] % 2 != 0) {
+
+                int soma = vetor[i] * ocorrencias[i];
+
+                printf("\nClassificacao: Primo - Impar");
+                printf("\nSoma das ocorrencias: %d\n", soma);
+
+                printf("Cadastre %d animal(is):\n", soma);
+
+                for(j = 0; j < soma; j++) {
+                    printf("Animal %d: ", qtdAnimais + 1);
+                    scanf(" %[^\n]", animais[qtdAnimais]);
+                    qtdAnimais++;
+                }
+            }
+            else if(ocorrencias[i] % 2 == 0) {
+                printf("\nClassificacao: Par");
+            }
+            else {
+                printf("\nClassificacao: Nao repetido");
+            }
+
+            printf("\n");
+        }
+    }
+
+    printf("\n===== CORRESPONDENCIAS =====\n");
+
+    for(i = 0; i < TAM; i++) {
+
+        if(ocorrencias[i] % 2 == 0) {
+
+            printf("Numero %d -> ", vetor[i]);
+
+            if(i < qtdAnimais) {
+                printf("%s\n", animais[i]);
+            }
+            else {
+                printf("Nao existe correspondencia\n");
+            }
+        }
+    }
+
+    printf("\n===== ANIMAIS CADASTRADOS =====\n");
+
+    for(i = 0; i < qtdAnimais; i++) {
+        printf("%d. %s\n", i + 1, animais[i]);
+    }
+
+    return 0;
+}
