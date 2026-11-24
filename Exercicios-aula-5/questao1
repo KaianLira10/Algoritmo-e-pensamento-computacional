@@ -1,14 +1,11 @@
-Atividade 5: Um sistema eleitoral precisa registrar votos. Crie uma struct Eleitor
-com titulo (char[12]) e zona (int). Crie uma struct Cedula que contenha um Eleitor
-(struct aninhada) e o numero_voto (int).
-O que o algoritmo deve fazer:
-a) Implementar uma função que adicione votos dinamicamente (realoque
-memória usando realloc à medida que novos votos entram).
-b) Salvar a lista completa em um arquivo binário urnas.bin.
-c) Desenvolver uma função de recuperação rápida que abra o arquivo, descubra
-o tamanho total dele (usando fseek e ftell), aloque exatamente o espaço
-necessário na memória de uma só vez, e leia todos os registros do arquivo
-diretamente para o bloco alocado.
+ESTRUTURAS E REPETIÇÃO
+
+1 - Um condomínio quer monitorar o consumo de
+água de cada morador. Escreva um programa que
+leia o consumo mensal de água (em m³) de 5
+moradores. Para cada morador, informe se o
+consumo está dentro da média (até 20 m³) ou
+acima. Ao final, mostre o consumo médio geral..
 
 #include <stdio.h>
 
