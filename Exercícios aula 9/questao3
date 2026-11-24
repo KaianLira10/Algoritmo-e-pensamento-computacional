@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int conta_corrente;
+    char nome[50];
+    float saldo;
+} Cliente;
+
+int main() {
+
+    FILE *arquivo;
+    Cliente cliente;
+
+    int conta;
+    float valor;
+    int encontrado = 0;
+
+    printf("Numero da conta: ");
+    scanf("%d", &conta);
+
+    printf("Valor (positivo = deposito | negativo = saque): ");
+    scanf("%f", &valor);
+
+    arquivo = fopen("clientes.bin", "rb+");
+
+    if (arquivo == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
+
+    while (fread(&cliente, sizeof(Cliente), 1, arquivo) == 1) {
+
+        if (cliente.conta_corrente == conta) {
+
+            cliente.saldo += valor;
+
+            fseek(arquivo, -sizeof(Cliente), SEEK_CUR);
+
+            fwrite(&cliente, sizeof(Cliente), 1, arquivo);
+
+            encontrado = 1;
+
+            printf("\nConta encontrada!\n");
+            printf("Cliente: %s\n", cliente.nome);
+            printf("Novo saldo: R$ %.2f\n", cliente.saldo);
+
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        printf("\nConta nao encontrada.\n");
+    }
+
+    fclose(arquivo);
+
+    return 0;
+}
