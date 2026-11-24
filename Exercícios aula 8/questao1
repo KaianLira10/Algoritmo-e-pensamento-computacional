@@ -1,0 +1,156 @@
+#include <stdio.h>
+#include <string.h>
+
+#define TAM 12
+#define MAX 50
+
+typedef struct {
+    char nome[50];
+    float preco;
+} Produto;
+
+int main() {
+    int vetor[TAM];
+    int cont[TAM] = {0};
+    int visitado[TAM] = {0};
+
+    int vetorPar[MAX];
+    int qtdPar = 0;
+
+    Produto produtos[MAX];
+    int qtdProdutos = 0;
+
+    int i, j;
+
+    // Leitura dos 12 números
+    printf("Digite 12 numeros inteiros:\n");
+    for (i = 0; i < TAM; i++) {
+        scanf("%d", &vetor[i]);
+    }
+
+    // Contagem das ocorrências
+    for (i = 0; i < TAM; i++) {
+        for (j = 0; j < TAM; j++) {
+            if (vetor[i] == vetor[j]) {
+                cont[i]++;
+            }
+        }
+    }
+
+    // Separação dos números com ocorrência par
+    for (i = 0; i < TAM; i++) {
+        if (!visitado[i]) {
+
+            for (j = i + 1; j < TAM; j++) {
+                if (vetor[i] == vetor[j]) {
+                    visitado[j] = 1;
+                }
+            }
+
+            if (cont[i] % 2 == 0) {
+                vetorPar[qtdPar++] = vetor[i];
+            }
+        }
+    }
+
+    // Cadastro dos produtos para números com ocorrência ímpar
+    for (i = 0; i < TAM; i++) {
+
+        if (!visitado[i]) {
+
+            int repetido = 0;
+
+            for (j = 0; j < i; j++) {
+                if (vetor[i] == vetor[j]) {
+                    repetido = 1;
+                    break;
+                }
+            }
+
+            if (!repetido && cont[i] % 2 != 0) {
+
+                printf("\nNumero %d aparece %d vez(es).\n",
+                       vetor[i], cont[i]);
+
+                printf("Informe o nome do produto: ");
+                scanf(" %[^\n]", produtos[qtdProdutos].nome);
+
+                printf("Informe o preco unitario: ");
+                scanf("%f", &produtos[qtdProdutos].preco);
+
+                qtdProdutos++;
+            }
+        }
+    }
+
+    // Ordenação alfabética dos produtos
+    Produto auxProd;
+
+    for (i = 0; i < qtdProdutos - 1; i++) {
+        for (j = i + 1; j < qtdProdutos; j++) {
+            if (strcmp(produtos[i].nome, produtos[j].nome) > 0) {
+
+                auxProd = produtos[i];
+                produtos[i] = produtos[j];
+                produtos[j] = auxProd;
+            }
+        }
+    }
+
+    // Ordenação decrescente do vetor dos pares
+    int aux;
+
+    for (i = 0; i < qtdPar - 1; i++) {
+        for (j = i + 1; j < qtdPar; j++) {
+            if (vetorPar[i] < vetorPar[j]) {
+                aux = vetorPar[i];
+                vetorPar[i] = vetorPar[j];
+                vetorPar[j] = aux;
+            }
+        }
+    }
+
+    // Saída dos dados
+
+    printf("\n===== VETOR INFORMADO =====\n");
+    for (i = 0; i < TAM; i++) {
+        printf("%d ", vetor[i]);
+    }
+
+    printf("\n\n===== OCORRENCIAS =====\n");
+
+    for (i = 0; i < TAM; i++) {
+
+        int repetido = 0;
+
+        for (j = 0; j < i; j++) {
+            if (vetor[i] == vetor[j]) {
+                repetido = 1;
+                break;
+            }
+        }
+
+        if (!repetido) {
+            printf("Numero %d -> %d vez(es)\n",
+                   vetor[i], cont[i]);
+        }
+    }
+
+    printf("\n===== PRODUTOS CADASTRADOS =====\n");
+
+    for (i = 0; i < qtdProdutos; i++) {
+        printf("%s - R$ %.2f\n",
+               produtos[i].nome,
+               produtos[i].preco);
+    }
+
+    printf("\n===== VETOR DE OCORRENCIAS PARES (DECRESCENTE) =====\n");
+
+    for (i = 0; i < qtdPar; i++) {
+        printf("%d ", vetorPar[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
