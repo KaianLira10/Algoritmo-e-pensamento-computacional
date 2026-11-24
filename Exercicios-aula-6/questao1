@@ -1,1 +1,33 @@
+#include <stdio.h>
 
+int main() {
+    int numeros[10];
+    int pesquisa;
+    int contador = 0;
+
+    printf("Digite 10 numeros inteiros:\n");
+
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &numeros[i]);
+    }
+
+    printf("Digite um numero para pesquisar: ");
+    scanf("%d", &pesquisa);
+
+    printf("\nPosicoes encontradas: ");
+
+    for (int i = 0; i < 10; i++) {
+        if (numeros[i] == pesquisa) {
+            printf("%d ", i);
+            contador++;
+        }
+    }
+
+    if (contador > 0) {
+        printf("\nO numero %d foi encontrado %d vez(es).\n", pesquisa, contador);
+    } else {
+        printf("\nO numero %d nao foi encontrado no array.\n", pesquisa);
+    }
+
+    return 0;
+}
