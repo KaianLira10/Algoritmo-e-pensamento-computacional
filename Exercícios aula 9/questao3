@@ -1,15 +1,13 @@
-Atividade 4: Para otimizar o desempenho do disco, você precisa salvar uma lista inteira
-de professores de uma só vez. A struct Professor possui registro (int) e horas_aula (int).
+Um arquivo binário chamado clientes.bin armazena vários registros da
+struct Cliente (contendo conta_corrente (int), nome (char[50]) e saldo (float)).
 O que o algoritmo deve fazer:
-Perguntar ao usuário quantos professores ele deseja cadastrar (N).
-Alocar dinamicamente um array para N professores.
-Criar um segundo bloco de memória (um buffer bruto de bytes com tamanho N *
-sizeof(Professor)).
-Utilizar memcpy() para copiar o array inteiro de structs para dentro desse buffer.
-Gravar o buffer completo no arquivo folha.dat com uma única chamada da função
-fwrite().
-Criar uma função de leitura que use fread() para carregar tudo de volta em um novo
-array dinâmico
+a) Solicitar ao usuário o número de uma conta corrente e um valor de
+depósito/saque.
+b) Abrir o arquivo binário em modo de leitura/escrita ("rb+").
+c) Ler o arquivo de registro em registro. Ao encontrar a conta correspondente,
+atualizar o campo saldo.
+d) Utilizar a função fseek() para voltar o ponteiro do arquivo para a posição exata
+daquele cliente e sobrescrever o registro antigo com o atualizado.
 ----------------------------------------------------------------------------------
 
 #include <stdio.h>
