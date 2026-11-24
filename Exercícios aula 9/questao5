@@ -1,3 +1,17 @@
+Atividade 4: Para otimizar o desempenho do disco, você precisa salvar uma lista inteira
+de professores de uma só vez. A struct Professor possui registro (int) e horas_aula (int).
+O que o algoritmo deve fazer:
+Perguntar ao usuário quantos professores ele deseja cadastrar (N).
+Alocar dinamicamente um array para N professores.
+Criar um segundo bloco de memória (um buffer bruto de bytes com tamanho N *
+sizeof(Professor)).
+Utilizar memcpy() para copiar o array inteiro de structs para dentro desse buffer.
+Gravar o buffer completo no arquivo folha.dat com uma única chamada da função
+fwrite().
+Criar uma função de leitura que use fread() para carregar tudo de volta em um novo
+array dinâmico
+--------------------------------------------------------------------------------
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
