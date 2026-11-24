@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int main() {
+    int numeros[10];
+    int positivosPares[10];
+    int negativosImpares[10];
+
+    int qtdPositivosPares = 0;
+    int qtdNegativosImpares = 0;
+
+    int i, j, aux;
+
+    printf("Digite 10 valores inteiros:\n");
+
+    for(i = 0; i < 10; i++) {
+        scanf("%d", &numeros[i]);
+
+        if(numeros[i] > 0 && numeros[i] % 2 == 0) {
+            positivosPares[qtdPositivosPares++] = numeros[i];
+        }
+
+        if(numeros[i] < 0 && numeros[i] % 2 != 0) {
+            negativosImpares[qtdNegativosImpares++] = numeros[i];
+        }
+    }
+
+    // Ordenar positivos e pares em ordem crescente
+    for(i = 0; i < qtdPositivosPares - 1; i++) {
+        for(j = i + 1; j < qtdPositivosPares; j++) {
+            if(positivosPares[i] > positivosPares[j]) {
+                aux = positivosPares[i];
+                positivosPares[i] = positivosPares[j];
+                positivosPares[j] = aux;
+            }
+        }
+    }
+
+    // Ordenar negativos e ímpares em ordem crescente
+    for(i = 0; i < qtdNegativosImpares - 1; i++) {
+        for(j = i + 1; j < qtdNegativosImpares; j++) {
+            if(negativosImpares[i] > negativosImpares[j]) {
+                aux = negativosImpares[i];
+                negativosImpares[i] = negativosImpares[j];
+                negativosImpares[j] = aux;
+            }
+        }
+    }
+
+    printf("\nPositivos e pares:\n");
+    for(i = 0; i < qtdPositivosPares; i++) {
+        printf("%d ", positivosPares[i]);
+    }
+
+    printf("\n\nNegativos e impares:\n");
+    for(i = 0; i < qtdNegativosImpares; i++) {
+        printf("%d ", negativosImpares[i]);
+    }
+
+    printf("\n");
+
+    return 0;
+}
