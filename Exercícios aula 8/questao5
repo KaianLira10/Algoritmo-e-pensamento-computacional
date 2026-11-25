@@ -1,3 +1,26 @@
+5. Uma organização está desenvolvendo um sistema para cadastrar quatro participantes de uma competição. Cada participante deverá possuir
+um identificador (ID) calculado a partir de sua idade. O sistema também deverá registrar valores numéricos, calcular médias ponderadas e
+classificar os participantes de acordo com uma comparação geométrica.
+Desenvolva um algoritmo em linguagem C que execute as seguintes operações:
+1.Cadastro dos participantes
+- Solicite o nome e a idade de quatro participantes.
+- Calcule o ID de cada participante utilizando o fatorial da idade dividido por 2.
+- Os IDs deverão ser únicos.
+- Caso dois ou mais participantes obtenham o mesmo ID, o cálculo deverá ser refeito utilizando o fatorial da metade da idade do
+participante, elevado à quantidade de valores capturados.
+- Caso ainda exista duplicidade, repita o procedimento até obter um ID exclusivo.
+2. Captura dos valores
+- Solicite ao usuário a quantidade de valores que serão registrados para cada participante.
+- Armazene os valores em uma matriz, na qual cada linha representa um participante e cada coluna representa um valor informado.
+- Os valores poderão ser positivos, negativos ou iguais a zero.
+3. Organização dos participantes
+Após realizar os cadastros, organize os quatro participantes em ordem alfabética pelo nome, mantendo corretamente associados seus
+IDs e respectivos valores armazenados na matriz.
+4. Cálculo da média ponderada
+Desenvolva uma função para calcular a média ponderada dos valores capturados para cada participante.
+Considere como pesos a sequência crescente de números naturais, começando em 1. Assim, o primeiro valor terá peso 1, o segundo
+peso 2, o terceiro peso 3 e assim sucessivamente.
+
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
