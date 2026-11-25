@@ -1,8 +1,7 @@
-Questão 6 - Desenvolva uma calculadora que realize as quatro operações matemáticas básicas: adição,
-subtração, multiplicação e divisão. Implemente uma função para cada operação, recebendo dois números como
-parâmetros e retornando o resultado. O programa deverá ler dois números e uma opção de operação, chamar a
-função correspondente e exibir o resultado. Na divisão, verifique se o divisor é diferente de zero antes de realizar a
-operação.
+Questão 7 - Crie uma função chamada calcularMedia que receba três notas e retorne a média aritmética. Em
+seguida, crie uma função chamada verificarSituacao que receba a média e exiba a situação do aluno,
+considerando aprovado quem obtiver média maior ou igual a 7,0 e reprovado quem obtiver média inferior a 7,0. No
+programa principal, leia as três notas, calcule a média e apresente a situação do aluno.
 
 #include <stdio.h>
 
