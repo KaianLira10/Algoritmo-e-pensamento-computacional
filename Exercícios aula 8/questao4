@@ -1,3 +1,28 @@
+4. Cinco apostadores desejam tentar a sorte em uma competição que premiará os três melhores resultados. Para participar, cada apostador
+deverá informar seu nome e um valor inteiro positivo.
+a) Desenvolva um algoritmo em linguagem C que receba os dados dos cinco apostadores e calcule a soma da sequência de Fibonacci
+correspondente ao valor informado por cada participante.
+b) Após calcular os resultados, o programa deverá determinar os três vencedores, obedecendo aos seguintes critérios:
+c) 1º lugar – Maior número primo: será premiado o apostador que obtiver o maior resultado primo entre os cinco participantes.
+d) 2º lugar – Maior número par: será premiado o apostador que obtiver o maior resultado par entre os participantes que ainda não
+receberam premiação.
+e) 3º lugar – Maior resultado acima da média: será premiado o apostador que apresentar o maior resultado acima da média dos cinco
+participantes, desde que ainda não tenha recebido outra premiação.
+f) Requisitos do algoritmo
+a) Cadastre o nome dos cinco apostadores e solicite um número inteiro positivo para cada um.
+b) Desenvolva uma função para calcular a soma dos termos da sequência de Fibonacci até a quantidade de termos indicada pelo
+apostador.
+c) Armazene os resultados calculados em um vetor.
+d) Desenvolva uma função para verificar se determinado resultado é primo.
+e) Identifique o maior resultado primo e atribua o primeiro lugar.
+f) Identifique o maior resultado par entre os apostadores que ainda não foram premiados e atribua o segundo lugar.
+g) Calcule a média dos cinco resultados e identifique o maior resultado acima dela, considerando apenas os participantes ainda
+não premiados, para atribuir o terceiro lugar.
+h) Garanta que nenhum apostador receba mais de uma premiação.
+i) Caso não exista participante que atenda a algum critério, o respectivo prêmio deverá ficar sem vencedor.
+j) Ao final, apresente somente os nomes dos apostadores vencedores e suas respectivas colocações, em ordem decrescente de
+classificação
+
 #include <stdio.h>
 #include <string.h>
 
