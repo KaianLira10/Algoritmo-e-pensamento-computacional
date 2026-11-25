@@ -1,3 +1,22 @@
+1. Uma equipe está organizando um sorteio beneficente e precisa analisar os números registrados durante o planejamento da
+compra dos produtos. Para isso, desenvolva um algoritmo em linguagem C que leia 12 números inteiros e armazene-os em
+um vetor. Em seguida, o programa deverá:
+a) Contar quantas vezes cada número aparece no vetor.
+b) Os números cuja quantidade de ocorrências for ímpar representarão as quantidades de produtos que deverão ser
+comprados para o sorteio beneficente.
+c) Os números cuja quantidade de ocorrências for par deverão ser armazenados em um segundo vetor, que deverá ser
+organizado em ordem decrescente.
+d) Para cada número cuja quantidade de ocorrências for ímpar, o programa deverá solicitar o cadastro dos produtos
+que serão comprados, informando o nome e o preço unitário de cada produto.
+e) Após o cadastro, os produtos deverão ser apresentados em ordem alfabética pelo nome. Ao final, o programa
+deverá apresentar:
+a) Os 12 números informados pelo usuário.
+b) Cada número distinto e a quantidade de vezes que aparece no vetor.
+c) Os produtos cadastrados para compra, com seus respectivos nomes e preços, organizados em ordem
+alfabética.
+d) Os números cuja quantidade de ocorrências seja par, armazenados em um segundo vetor e apresentados em
+ordem decrescente.
+
 #include <stdio.h>
 #include <string.h>
 
