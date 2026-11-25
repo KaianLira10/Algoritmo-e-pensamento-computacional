@@ -1,6 +1,6 @@
-Questão 4 - Crie uma função chamada celsiusParaFahrenheit que receba uma temperatura em graus Celsius e
-retorne o valor convertido para Fahrenheit. Utilize a fórmula F = (9 × C) / 5 + 32. O programa principal deverá
-solicitar a temperatura ao usuário e apresentar o resultado com duas casas decimais.
+Questão 5 - Crie uma função chamada ehPar que receba um número inteiro e retorne 1 caso ele seja par ou 0
+caso seja ímpar. No programa principal, leia um número e informe se ele é par ou ímpar utilizando o resultado da
+função.
 
 #include <stdio.h>
 
